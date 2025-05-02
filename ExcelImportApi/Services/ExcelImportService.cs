@@ -29,17 +29,18 @@ namespace ExcelImportApi.Services
 
             var products = new List<Product>();
 
+            //read excel file row by row
             for (int i = 1; i < table.Rows.Count; i++)
             {
                 var name = table.Rows[i][0]?.ToString();
-                var priceStr = table.Rows[i][1]?.ToString();
+                var SalpriceStr = table.Rows[i][1]?.ToString();
 
-                if (!string.IsNullOrWhiteSpace(name) && decimal.TryParse(priceStr, out decimal price))
+                if (!string.IsNullOrWhiteSpace(name) && decimal.TryParse(SalpriceStr, out decimal sal))
                 {
                     products.Add(new Product
                     {
                         Name = name,
-                        Salary = price
+                        Salary = sal
                     });
                 }
             }
