@@ -39,7 +39,7 @@ namespace ExcelImportApi.Services
                     products.Add(new Product
                     {
                         Name = name,
-                        Price = price
+                        Salary = price
                     });
                 }
             }
